@@ -1,2 +1,26 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div class="main-back-image">
+<div class="container">
+  <div class="row ">
+   <div class="col−8 mx-auto">
+     <h2>アイテムを投稿しよう！</h2>
+    <%= form_with model: Item.new, url: items_path do |f| %>
+    
+     
+      <%= f.label :image, "アイテム画像", class: "col-5 " %>
+      <%= f.file_field :image, class: "form-control-file user_image col-7", accept: 'image/*' %>
+    
+      <div>
+      <%= f.label :name, "アイテム名", class: "col-5"  %>
+      <%= f.text_field :name, autofocus: true, class: "form-control col-7" %>
+      </div>
+      <div>
+      <%= f.label :description, "アイテム説明", class: "col-5"  %>
+      <%= f.text_field :description, autofocus: true, class: "form-control col-7" %>
+     </div>
+     <%= f.submit "新規投稿", class: "btn btn-primary" %>
+     
+    <% end %> 
+    </div>
+  </div>
+</div>
+</div>

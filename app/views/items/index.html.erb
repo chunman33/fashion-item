@@ -1,2 +1,42 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<div class="main-back-image">
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+     
+        <% if user_signed_in? %>
+       <table class='table'>
+          <tr><%= image_tag @user.get__image(100,100) %></tr>
+          <tr>
+        	  <th>name</th>
+        	  <td><%= @user.name %></td>
+          </tr>
+          <tr>
+        	  <th>introduction</th>
+        	  <td><%= @user.introduction %></td>
+          </tr>
+        <% end %>
+    </div>
+ 
+    <div class="col-9">
+      
+    <h2>アイテム一覧</h2>
+    <!--countメソッドには引数を渡すことができる(ブロックでも可)ため、ブロックにしてsale_statusがtrueの時のみカウント-->
+    
+    <div class="w-100 d-flex flex-wrap">
+ 
+   <% @items.each do |item| %> 
+  
+    <div class="w-20 mr-2 mb-2">
+    
+    <%= link_to item_path(item) do %>
+     <div class="card-image-top"><%= image_tag item.get_image(170, 170) %></div>
+     <h7 class="card-title"><%= item.name %></h7>
+     <p class="card-text"><%= item.description %></p>
+    </div>
+   <% end %>
+  <% end %>
+    </div>
+   </div>
+  </div>  
+</div>
+</div>
