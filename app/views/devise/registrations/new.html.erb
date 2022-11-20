@@ -1,24 +1,25 @@
+<div class="main-back-image">
 <div class="container">
  <div class="row">
    <div class="col-5">
-    <h5 class="mt-5 mb-5">新規会員登録</h5>
+    <h5 class="mt-5 mb-5 text-white">新規会員登録</h5>
   </div>
  </div>
 
 <%= form_with model: @user, url: user_registration_path do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
    <div class="row">
-        <%= f.label :name ,"ユーザ名", class: "col-4" %><br>
+        <%= f.label :name ,"ユーザ名", class: "col-4 text-white" %><br>
         <%= f.text_field :name, autofocus: true, placeholder: "山田 太朗", class: "form-control col-4" %>
   </div>
 
   <div class="row mt-4">
-    <%= f.label :email, "メールアドレス", class: "col-4" %>
+    <%= f.label :email, "メールアドレス", class: "col-4 text-white" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example.com", class: "form-control col-4" %>
   </div>
 
   <div class="row mt-4">
-    <div class="col-4">
+    <div class="col-4 text-white">
     <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
@@ -28,7 +29,7 @@
   </div>
 
   <div class="row mt-4">
-    <%= f.label :password_confirmation, "パスワードを再入力してください。", class: "col-4" %>
+    <%= f.label :password_confirmation, "パスワードを再入力してください。", class: "col-4 text-white" %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "abcdef", class: "form-control col-4" %>
   </div>
 
@@ -38,11 +39,12 @@
 <% end %>
 
 
-<h5 class="mt-5 mb-3">既に登録済みの方</h5>
+<h5 class="mt-5 mb-3 text-white">既に登録済みの方</h5>
 
  <div class="row mt-4">
-  <div class="col-5 offset-1 d-flex">
-    <%= render "devise/shared/links" %><p>からログインしてください。</p>
+  <div class="col-5 offset-1 d-flex text-white">
+    <%= render "devise/shared/links" %>
   </div>
  </div>
+</div>
 </div>

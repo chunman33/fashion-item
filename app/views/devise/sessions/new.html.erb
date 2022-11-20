@@ -1,19 +1,20 @@
+<div class="main-back-image">
 <div class="container">
  <div class="row">
    <div class="col-5">
-    <h5 class="mt-5 mb-5">ログイン</h5>
+    <h5 class="mt-5 mb-5 text-white">ログインページ</h5>
   </div>
  </div>
  
 <%= form_with model: @user, url: user_session_path do |f| %>
 
   <div class="row">
-    <%= f.label :name ,"ユーザ名", class: "col-4" %><br>
+    <%= f.label :name ,"ユーザ名", class: "col-4 text-white" %><br>
     <%= f.text_field :name, autofocus: true, placeholder: "山田 太朗", class: "form-control col-4" %>
   </div>
 
   <div class="row mt-4">
-    <div class="col-4">
+    <div class="col-4 text-white">
     <%= f.label :password, "パスワード" %></div>
     <%= f.password_field :password, autocomplete: "current-password",class: "form-control col-4" %>
   </div>
@@ -21,19 +22,20 @@
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "ログイン情報を記録する" %>
+      <%= f.label :remember_me, "ログイン情報を記録する", class:"text-white" %>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "ログイン", class: "btn btn-success col-2 offset-3 mt-5" %>
+    <%= f.submit "ログイン", class: "btn btn-success col-2 offset-3 mt-5 text-white" %>
   </div>
 <% end %>
 
-<h5 class="mt-5 mb-3">会員登録がお済みでない方</h5>
+<h5 class="mt-5 mb-3 text-white">会員登録がお済みでない方</h5>
 
  
   <div class="offset-1">
     <%= render "devise/shared/links" %>
  </div>
+</div>
 </div>

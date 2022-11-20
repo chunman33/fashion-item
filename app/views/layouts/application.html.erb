@@ -22,6 +22,7 @@
       <% if user_signed_in? %>
             <ul class="navbar-nav ml-auto">
               <li><%= link_to "マイページ", users_path, class: "btn btn-outline-secondary text-white mt-3 mr-5 mb-4" %></li>
+              <li><%= link_to "新規投稿", new_item_path, class: "btn btn-outline-secondary text-white mt-3 mr-5 mb-4" %></li>
               <li><%= link_to "商品一覧", items_path, class: "btn btn-outline-secondary text-white mt-3 mr-5" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary text-white mt-3 mr-4" %></li>
             </ul>
