@@ -1,12 +1,12 @@
 <div class="main-back-image">
 <div class="container">
   <div class="row">
-    <div class="col-3">
+    <div class="col-3 mt-5">
        <% if user_signed_in? %>
-       <table class='table'>
-          <tr><%= image_tag @user.get_image(100,100) %></tr>
+       <table class='table' style="color: white;">
+          <tr><%= image_tag @user.get_image(200,200) %></tr>
           <tr>
-        	  <th>name</th>
+        	  <th>User ID</th>
         	  <td><%= @user.name %></td>
           </tr>
           <tr>
@@ -19,12 +19,11 @@
     <div class="col-9">
       
     <h2 class="text-body mt-5">アイテム一覧</h2>
-    <!--countメソッドには引数を渡すことができる(ブロックでも可)ため、ブロックにしてsale_statusがtrueの時のみカウント-->
     
     <div class="d-flex flex-wrap">
        <% @items.each do |item| %> 
       
-       <div class="card bg-light" style="width: 180px; margin: 7px; border: 2px;">
+       <div class="card bg-light mb-5" style="width: 180px; margin: 7px; border: 2px;">
         <%= link_to item_path(item) do %>
          <div class="bd-placeholder-img card-img-top"><%= image_tag item.get_image(180, 170) %></div>
         <div class="card-body">

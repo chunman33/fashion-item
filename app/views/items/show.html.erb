@@ -1,2 +1,38 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="main-back-image">
+<div class="container">
+    <div class="row">
+   <div class="col−8 mx-auto">
+    <h1 class="text-white border border-light p-2 mt-4 mb-4">アイテムページ</h1>
+   </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-3 mb-5">
+       <div class="img"><%= image_tag @user.get_image(100,100), style: "border-radius: 50%;"%></div>
+       <div class="detail">
+            <%= link_to user_path(@user) do%>
+           <div class="name">User ID: <%= @user.name %></div>
+           <div class="description"><%= @user.introduction %></div>
+           <% end %>
+       </div>
+   </div>
+   
+   <div class="col-9">
+    <div class="card mb-3 mx-auto" style="max-width: 650px; height: 600px; mx-auto">
+    <%= image_tag @item.get_image(500,250) %>
+    <%= link_to edit_item_path(@item) do %>
+      <div class="card-body">
+        <p class="card-text">ITEM NAME：<%= @item.name %></p>
+        <p class="card-text">ITEM DESCRIPTION：<%= @item.description %></p>
+      </div>
+       <% end %>
+    
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>

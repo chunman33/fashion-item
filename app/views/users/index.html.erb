@@ -2,46 +2,46 @@
  <div class="container">
   <div class="row">
    <div class="col−8 mx-auto">
-    <h1 class=" border border-light p-2">マイページ</h1>
+    <h1 class="text-white border border-light p-2">マイページ</h1>
    </div>
   </div>
   
- <div class="card mb-3" style="max-width: 380px;">
-  <div class="row ">
+ <div class="card mb-3 mx-auto" style="max-width: 600px; height: 150px; mx-auto">
+  <div class="row">
    <div class="col-md-5">
     <div class="bd-placeholder-img" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image">
-     <%= image_tag @user.get_image(190,140) %>
+     <%= image_tag @user.get_image(200,200) %>
     </div>
     </div>
     <div class="col-md-7">
       <div class="card-body">
-        <h5 class="card-title"><%= @user.name %></h5>
-        <p class="card-text"><%= @user.introduction %></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h5 class="card-title">Profile <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary ml-2"  do %>
+          <i class="fas fa-user-cog"></i>
+         <% end %></h5>
+        <p class="card-text">User ID：<%= @user.name %></p>
+        <p class="card-text">Introduction：<%= @user.introduction %></p>
       </div>
     </div>
   </div>
 </div>
-  
-    <tr><%= image_tag @user.get_image(300,300) %></tr>
-       <table class='table'>
-          <tr>
-        	  <th class="text-white">ユーザ名</th>
-        	  <td class="text-white"></td>
-          </tr>
-          <tr>
-        	  <th class="text-white">紹介文</th>
-        	  <td class="text-white"><%= @user.introduction %></td>
-          </tr>
-        </table>
+       <div class="d-flex flex-wrap">
+       <% @items.each do |item| %> 
+      
+       <div class="card bg-light mb-5" style="width: 180px; margin: 1px; border: 2px;">
+        <%= link_to item_path(item) do %>
+         <div class="bd-placeholder-img card-img-top"><%= image_tag item.get_image(180, 170) %></div>
+        <div class="card-body">
+         <h7 class="card-title text-body">
+             <p class="card-text"><small class="text-muted">ITEM NAME</small></p>
+          <strong><%= item.name %></strong></h7>
+         
+        </div>
+        </div>
+       <% end %>
+      <% end %>
+      </div>
      </div>
     </div>
-    
-    <div class="col-8">
-     <% @items.each do |item| %>
-      <%= item.name%>
-      <%= item.description %>
-     <% end %>
     </div>
   </div>
   </div>
